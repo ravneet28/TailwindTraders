@@ -1,0 +1,15 @@
+# Starter pipeline
+# Start with a minimal pipeline that you can customize to build and deploy your code.
+# Add steps that build, run tests, deploy, and more:
+# https://aka.ms/yaml
+
+trigger: none
+ 
+steps:
+- task: AzureRmWebAppDeployment@4
+  inputs:
+    ConnectionType: 'AzureRM'
+    azureSubscription: 'VS-Prof-Dev-51(ccd0e20c-245d-43b1-8c76-f6b08dc7ba65)'
+    appType: 'webApp'
+    WebAppName: 'asptestapp-fai'
+    packageForLinux: '$(System.DefaultWorkingDirectory)/**/*.zip'
